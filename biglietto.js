@@ -14,17 +14,17 @@ buttonCalcolo.addEventListener('click', function (calcolo) {
     
     
     //valore dei chilometri inseriti dall'utente convertito in numeri decimali
-    const chilometri = parseFloat(document.getElementById('chilometri').value)
+    const chilometri = parseFloat(inputChilometri.value)
 
     //sconto selezionato dall'utente se under18 o over65
-    const tipoSconto = document.getElementById('sconto').value
+    const tipoSconto = selectSconto.value
 
     //prezzo del biglietto al km
     const prezzokm = 0.21
     console.log('prezzo al km', prezzokm.toFixed(2))
     
     const prezzoBase = chilometri * prezzokm
-    console.log('prezzp intero senza sconto', prezzoBase)
+    console.log('prezzo intero senza sconto', prezzoBase)
 
     
     let sconto = 0
