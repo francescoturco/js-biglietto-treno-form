@@ -22,17 +22,25 @@ buttonCalcolo.addEventListener('click', function (calcolo) {
     //prezzo del biglietto al km
     const prezzokm = 0.21
     console.log('prezzo al km', prezzokm.toFixed(2))
+    
+    const prezzoBase = chilometri * prezzokm
+    console.log('prezzp intero senza sconto', prezzoBase)
 
+    
     let sconto = 0
     if (tipoSconto === 'under18') {     //variabile del prezzo fisso nel caso l'utente selezioni lo sconto under18
-        sconto = 0.20               
+        sconto = 20             
     }
     else if (tipoSconto === 'over65') { //variabile del prezzo fisso nel caso l'utente selezioni lo sconto over65
-        sconto = 0.40
+        sconto = 40
     }
     console.log('sconto applicato',sconto)
+
+
+    //valore sconto
+    sconto= (sconto * prezzoBase) /100
     
-    const prezzoFinale = (chilometri * prezzokm) - sconto;  //prezzo finale con eventuale sconto
+    const prezzoFinale = prezzoBase - sconto;  //prezzo finale con eventuale sconto
     console.log('prezzo finale con/senza sconto', prezzoFinale.toFixed(2))
 
 
