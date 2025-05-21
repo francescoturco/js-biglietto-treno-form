@@ -7,31 +7,31 @@
 </head>
 <body>
     <h1>Calcolo Biglietto Prezzo Treno</h1>
-    <form id="form">
-        <label for="distanza">Distanza viaggio</label>
+    <form id="moduloBiglietto">
+        <label for="chilometri">Distanza viaggio</label>
         <input 
-            type="text"
-            id="km"
-            name="km"
+            type="number"
+            id="chilometri"
+            required min="1"
             placeholder="Inserisci km da percorrere"
          >
 
          <br><br>
 
          <label for="sconto">Tipo di sconto</label>
-         <select name="sconto" id="sconto">
-            <option value="nessuno">Prezzo intero</option>
-            <option value="under18">Sconto età inferiore a 18 anni</option>
-            <option value="over65">Over 65</option>
-         </select>
+            <select id="sconto">
+                <option value="nessuno">Nessuno sconto</option>
+                <option value="under18">Under 18</option>
+                <option value="over65">Over 65</option>
+            </select>
 
          <br><br>
 
-         <button>Calcola Prezzo</button>
+         <button id="calcolo">Calcola Prezzo</button>
     </form>
 
     <h2>Prezzo Finale:</h2>
-    <p id="risultato"></p>
+    <div id="risultato"></div>
 
 
     <script src="./biglietto.js"></script>
